@@ -1,1 +1,5 @@
-<%= @api_key %>
+<% @holidays.each { |n| %>
+<div> <%= n.fetch("name") %> 
+<%= n.fetch("date").fetch("iso") %>
+</div>
+<% } %>
