@@ -10,7 +10,8 @@ end
 
 get("/holiday") do
   api_key = ENV.fetch("API_KEY")
-  raw_response = HTTP.get("https://calendarific.com/api/v2/holidays?&api_key=#{api_key}&country=US&year=2019")
+  year = "2024"
+  raw_response = HTTP.get("https://calendarific.com/api/v2/holidays?&api_key=#{api_key}&country=US&year=#{year}")
   
 
   parsed = JSON.parse(raw_response)

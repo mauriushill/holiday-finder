@@ -1,5 +1,16 @@
-<% @holidays.each { |n| %>
-<div> <%= n.fetch("name") %> 
-<%= n.fetch("date").fetch("iso") %>
+<% if @holidays.any? %>
+  <% random_holiday = @holidays.sample %>
+  <%= random_holiday.fetch('name') %> <%= random_holiday.fetch('date').fetch('iso') %>
+<% end %>
+
+<div> 
+<form action="/holiday">
+<button type="submit" class="btn btn-danger">New Holiday</button>
+</form>
 </div>
-<% } %>
+
+<div>
+<form action="/">
+<button type="submit" class="btn btn-danger">Home</button>
+</form>
+</div>
